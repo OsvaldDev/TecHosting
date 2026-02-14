@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecHosting | Soporte y Contacto</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .support-hero { padding: 120px 0 60px; text-align: center; background: var(--bg-web); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; margin-top: 40px; }
+        
+        /* Tarjetas de contacto rápido */
+        .info-side { display: flex; flex-direction: column; gap: 20px; }
+        .contact-method { 
+            background: var(--bg-mc); padding: 25px; border-radius: 15px; 
+            border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 15px;
+        }
+        .contact-method i { font-size: 2.5rem; color: var(--accent); }
+        .contact-method h4 { margin-bottom: 5px; }
+        .contact-method p { color: var(--text-dim); font-size: 0.9rem; }
+
+        /* Formulario Estilizado */
+        .form-side { background: var(--card-bg); padding: 40px; border-radius: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-main); font-size: 0.9rem; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 12px; border-radius: 8px; background: var(--bg-main);
+            border: 1px solid rgba(255,255,255,0.1); color: white; outline: none;
+        }
+        .form-group textarea { height: 120px; resize: none; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+
+        .btn-send { width: 100%; padding: 15px; background: var(--accent); color: #000; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .btn-send:hover { filter: brightness(1.1); transform: translateY(-3px); }
+
+        @media (max-width: 968px) { .contact-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">TEC<span class="text-accent">HOSTING</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#web">Web Hosting</a></li>
+                <li><a href="index.html#minecraft">Minecraft</a></li>
+            </ul>
+            <a href="index.html" class="btn-nav">Volver</a>
+        </div>
+    </nav>
+
+    <section class="support-hero">
+        <div class="container">
+            <span class="tag">Atención al Cliente</span>
+            <h1>¿Cómo podemos <span class="text-accent">ayudarte?</span></h1>
+            <p>Nuestro equipo técnico está disponible para resolver tus dudas.</p>
+        </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 100px;">
+        <div class="contact-grid">
+            <div class="info-side">
+                <div class="contact-method">
+                    <i class='bx bxl-discord-alt'></i>
+                    <div>
+                        <h4>Comunidad Discord</h4>
+                        <p>Soporte en vivo 24/7 de la comunidad.</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class='bx bx-envelope'></i>
+                    <div>
+                        <h4>Email Directo</h4>
+                        <p>soporte@techosting.com</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class='bx bx-time-five'></i>
+                    <div>
+                        <h4>Horario de Atención</h4>
+                        <p>Lunes a Viernes: 09:00 - 22:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-side">
+                <form action="https://formspree.io/f/TU_EMAIL_AQUI" method="POST">
+                    <div class="form-group">
+                        <label>Asunto del mensaje</label>
+                        <select name="asunto" required>
+                            <option value="ventas">Dudas sobre Planes (Ventas)</option>
+                            <option value="tecnico">Problema Técnico</option>
+                            <option value="pagos">Problemas con Pagos</option>
+                            <option value="otro">Otros asuntos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tu Nombre</label>
+                        <input type="text" name="nombre" placeholder="Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tu Correo Electrónico</label>
+                        <input type="email" name="email" placeholder="email@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje detallado</label>
+                        <textarea name="mensaje" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-send">Enviar Ticket de Soporte</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center; color: var(--text-dim); font-size: 0.8rem; padding: 40px 0;">
+            &copy; 2026 TecHosting. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>

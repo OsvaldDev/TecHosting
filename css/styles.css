@@ -1,0 +1,161 @@
+/* PALETA PROFESIONAL 2025 */
+:root {
+    --bg-main: #0a0a0c;       /* Negro neutro suave */
+    --bg-web: #0f172a;        /* Azul noche profundo */
+    --bg-mc: #111827;         /* Gris azulado oscuro */
+    --card-bg: #1e293b;       /* Elevación visual */
+    --accent: #2dd4bf;        /* Menta cian desaturado (más elegante) */
+    --accent-hover: #5eead4;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* NAVBAR MINIMALISTA */
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -1px; }
+.text-accent { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+.btn-nav { background: var(--accent); color: #000; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at top, #1e293b 0%, var(--bg-main) 100%);
+}
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; letter-spacing: -2px; margin-bottom: 1.5rem; }
+.text-gradient { background: linear-gradient(to right, #2dd4bf, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { color: var(--text-dim); max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.2rem; }
+.hero-btns { display: flex; gap: 1rem; justify-content: center; }
+
+/* SECCIONES 100VH */
+.section-full {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 0;
+}
+.bg-web { background-color: var(--bg-web); }
+.bg-mc { background-color: var(--bg-mc); }
+
+.section-title { text-align: center; margin-bottom: 4rem; }
+.tag { background: rgba(45, 212, 191, 0.1); color: var(--accent); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; display: inline-block; }
+
+/* PLANES HORIZONTALES */
+.plans-wrapper {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    padding: 40px 20px; /* Esto da espacio para que las tarjetas respiren */
+    overflow: visible;  /* Evita que los bordes menta se corten al animar */
+}
+
+.card {
+    flex: 1;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s ease;
+}
+.card.reveal.active:hover {
+    transform: translateY(-15px) !important;
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card.featured.reveal.active:hover {
+    transform: translateY(-15px) scale(1.05) !important;
+    background: #1e293b;
+    box-shadow: 0 0 30px rgba(45, 212, 191, 0.3);
+}
+
+.card.featured {
+    background: #1e293b;
+    border: 2px solid var(--accent);
+    position: relative;
+    z-index: 10;
+    /* Quitamos el transform de aquí para que lo controle la clase .active */
+}
+.best-value { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 4px 15px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; }
+
+.plan-name { font-size: 1.2rem; font-weight: 700; color: var(--text-dim); }
+.price { font-size: 3rem; font-weight: 800; margin: 1.5rem 0; }
+.price span { font-size: 1rem; color: var(--text-dim); font-weight: 400; }
+
+.features { list-style: none; text-align: left; margin-bottom: 2.5rem; flex-grow: 1; }
+.features li { margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-dim); font-size: 0.95rem; }
+.features i { color: var(--accent); font-size: 1.2rem; }
+
+/* BOTONES */
+.btn-primary { background: var(--accent); color: #000; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+.btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+.btn-outline { border: 2px solid rgba(255,255,255,0.1); color: var(--white); padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; }
+.btn-outline:hover { background: rgba(255,255,255,0.05); }
+
+.btn-card { border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 0.8rem; border-radius: 10px; text-decoration: none; font-weight: 600; }
+
+/* FOOTER */
+footer { background: #020617; padding: 5rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-main { display: flex; justify-content: space-between; margin-bottom: 4rem; }
+.footer-brand p { color: var(--text-dim); margin-top: 1rem; max-width: 300px; }
+.footer-nav h4 { margin-bottom: 1.5rem; color: var(--white); }
+.social-icons { display: flex; gap: 1rem; font-size: 1.5rem; margin-top: 1rem; }
+.social-icons a { color: var(--text-dim); }
+.footer-copy { text-align: center; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; }
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+    .plans-wrapper { flex-direction: column; }
+    .card.featured { transform: scale(1); }
+    .section-full { min-height: auto; }
+}
+
+/* Estado inicial (Invisible) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Estado final para tarjetas NORMALES */
+.card.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estado final para la tarjeta DESTACADA (La clave del éxito) */
+.card.featured.reveal.active {
+    opacity: 1;
+    /* Aquí sumamos el movimiento Y el tamaño grande al mismo tiempo */
+    transform: translateY(0) scale(1.05) !important;
+}
